@@ -1,2 +1,2 @@
-# yaoxiaochao.github.io
-Blog
+# Blog
+Quick start blog for ink
