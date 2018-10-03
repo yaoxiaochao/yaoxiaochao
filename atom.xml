@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>碎文仓</title>
   <id>https://yaoxiaochao.github.io</id>
-  <updated>2018-10-03T22:22:10+03:00</updated>
+  <updated>2018-10-04T01:04:35+03:00</updated>
   <subtitle>一点点的积累也许就消失在那一刻</subtitle>
   <link href="https://yaoxiaochao.github.io"></link>
   <author>
@@ -23,6 +23,16 @@
     <id>tag:yaoxiaochao.github.io,2016-07-11:/ink-blog-tool-en.html</id>
     <content type="html">&lt;p&gt;InkPaper is an static blog generator developed by Golang, No dependencies, Cross platform, Easy use, Fast build, Elegant theme.&lt;/p&gt;&#xA;</content>
     <link href="https://yaoxiaochao.github.io/ink-blog-tool-en.html"></link>
+    <author>
+      <name>Miba</name>
+    </author>
+  </entry>
+  <entry>
+    <title>使用 Ubuntu 和 hexo 部署博客</title>
+    <updated></updated>
+    <id>urn:uuid:bc2f0c8b-ea5a-4db5-b429-3c43f351af43</id>
+    <content type="html"></content>
+    <link href="https://yaoxiaochao.github.io/使用ubuntu-hexo部署博客.html"></link>
     <author>
       <name>Miba</name>
     </author>

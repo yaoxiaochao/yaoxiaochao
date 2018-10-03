@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="碎文仓">
+<meta name="twitter:description" content="一点点的积累也许就消失在那一刻">
+<meta name="twitter:image:src" content="https://yaoxiaochao.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://yaoxiaochao.github.io">
+<meta property="og:title" content="碎文仓">
+<meta property="og:description" content="一点点的积累也许就消失在那一刻">
+<meta property="og:site_name" content="碎文仓">
+<meta property="og:image" content="https://yaoxiaochao.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="碎文仓">
+<meta itemprop="description" content="一点点的积累也许就消失在那一刻">
+<meta itemprop="image" content="https://yaoxiaochao.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://yaoxiaochao.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="Ubuntu,hexo,">
+        <meta name="description" content="使用 Ubuntu 和 hexo 部署博客">
+        <meta name="author" content="Miba">
+        <title>使用 Ubuntu 和 hexo 部署博客</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    碎文仓
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">订阅</a></li>
+      <li class="menu-item"><a href="/atom.xml"></a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">使用 Ubuntu 和 hexo 部署博客</h1>
+                <section class="info">
+                    <span class="avatar" style="background-image: url(/images/write.jpg);"></span>
+                    <a class="name" href="/about.me.html">Miba</a>
+                    
+                    <span class="date" data-time="0"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/Ubuntu/index.html">Ubuntu</a><a class="tag" href="/tag/hexo/index.html">hexo</a></span>
+                </section>
+                <article class="content"><h3>使用Ubuntu + hexo 部署博客</h3>
+
+<p>前言:
+   之前在windows 10 使用过git+hexo, 安装过程还算容易, 因为node.js 有exe 安装包, 而在Ubuntu平台上,
+需要利用nvm,npm包管理工具来安装, 因为没有在网上搜索到详细的解决方案, 所以主要在这里浪费了时间.</p>
+
+<p>####安装git, 对接github, 这里比较简单, 都可以百度.</p>
+
+<p>####安装node.js, 大概有两种方法, 一种是通过软件仓库安装, 另一种是通过nvm安装, 我使用的是后一种, 这里重点分享一下:
+运行命令如下:</p>
+
+<pre><code class="language-bash">    export NVM_DIR=&quot;$HOME/.nvm&quot; &amp;&amp; (
+    git clone https://github.com/creationix/nvm.git &quot;$NVM_DIR&quot;
+    cd &quot;$NVM_DIR&quot;
+    it checkout `git describe --abbrev=0 --tags --match &quot;v[0-9]*&quot; origin`
+    ) &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;
+</code></pre>
+
+<p>等待完成，为了使 nvm 能开机自动启动，需要添加如下内容到你的~/.bashrc,~/.profile,或者~/.zshrc 文件中：</p>
+
+<pre><code class="language-bash">    export NVM_DIR=&quot;$HOME/.nvm&quot;
+    [ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;
+</code></pre>
+
+<p>nvm 的部分使用说明</p>
+
+<p>列出可安装包信息</p>
+
+<pre><code class="language-bash">nvm ls-remote
+</code></pre>
+
+<p>安装最新稳定版</p>
+
+<pre><code class="language-bash">nvm install stable
+</code></pre>
+
+<p>启用安装好的版本</p>
+
+<pre><code class="language-bash">nvm use node
+</code></pre>
+
+<p>你也可以这样启用它</p>
+
+<pre><code class="language-bash">nvm run node --version
+</code></pre>
+
+<p>设置默认版本</p>
+
+<pre><code class="language-bash">nvm alias default node
+</code></pre>
+
+<p>安装完成后使用nvm -ls检查node.js 运行状态</p>
+
+<pre><code>iojs-v3.3.1
+     v4.8.3
+    v6.11.0
+-&gt;       v8.1.3
+default -&gt; stable (-&gt; v8.1.3)
+node -&gt; stable (-&gt; v8.1.3) (default)
+stable -&gt; 8.1 (-&gt; v8.1.3) (default)
+iojs -&gt; iojs-v3.3 (-&gt; iojs-v3.3.1) (default)
+lts/* -&gt; lts/boron (-&gt; v6.11.0)
+lts/argon -&gt; v4.8.3
+lts/boron -&gt; v6.11.0
+</code></pre>
+
+<p>如果有哪一项没有安装, 可以使用 nvm install 来安装</p>
+
+<p>####手动更新nvm</p>
+
+<pre><code class="language-bash">    (cd &quot;$NVM_DIR&quot;
+    git fetch origin
+    git checkout `git describe --abbrev=0 --tags --match &quot;v[0-9]*&quot; origin`
+    ) &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;
+</code></pre>
+
+<p>####安装hexo
+如果前面的步骤都正确没问题，那么现在可以通过 npm 安装 hexo 了：</p>
+
+<pre><code class="language-bash">npm install -g hexo-cli
+</code></pre>
+
+<p>####安装完成后，进行初始化操作</p>
+
+<pre><code class="language-bash">mkdir blog
+hexo init blog      #初始化，创建一个你专门存放博客文件的文件夹，我这里把文件夹命名为 blog，你可以改成你想要的名字
+cd blog                #进入 blog 目录
+npm install          #安装相关依赖
+</code></pre>
+
+<p>一些使用说明</p>
+
+<p>####hexo 更新</p>
+
+<pre><code class="language-bash">npm update -g
+</code></pre>
+
+<p>####安装插件</p>
+
+<pre><code class="language-bash">npm install &lt;plugin-name&gt; --save
+</code></pre>
+
+<p>####卸载插件</p>
+
+<pre><code class="language-bash">npm uninstall &lt;plugin-name&gt;
+</code></pre>
+</article>
+                <section class="author">
+                    <div class="avatar" style="background-image: url(/images/write.jpg);"></div>
+                    <a class="name" href="/about.me.html">Miba</a>
+                    <div class="intro">“矮矬穷”&amp;“高富帅”</div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/ink-blog-tool-en.html">An Elegant Static Blog Generator —— InkPaper</a>
+                    </section>
+                    
+                    
+                </section>
+                
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        碎文仓 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>
