@@ -112,7 +112,8 @@
 
 <p>编辑<code>config.yml</code>，使用如下格式：</p>
 
-<pre><code class="language-yaml">site:
+<p>``` yaml
+site:
     title: 网站标题
     subtitle: 网站子标题
     limit: 每页可显示的文章数目
@@ -121,137 +122,9 @@
     root: 网站根路径 #可选
     lang: 网站语言 #支持en, zh, ru, ja，可在theme/config.yml配置
     url: 网站链接 #用于RSS生成
-    link: 文章链接形式 #默认为{title}.html，支持{year},{month},{day},{title}变量
+    link: 文章链接形式 #默认为{title}.html，支持{year},{month},{day},{title}变量</p>
 
-authors:
-    作者ID:
-        name: 作者名称
-        intro: 作者简介
-        avatar: 作者头像路径
-
-build:
-    output: 构建输出目录 #可选, 默认为 &quot;public&quot;
-    port: 预览端口
-    copy:
-        - 构建时将会复制的目录/文件
-    publish: |
-        ink publish 命令将会执行的脚本
-</code></pre>
-
-<h3>创建文章</h3>
-
-<p>在<code>source</code>目录中建立任意<code>.md</code>文件（可置于子文件夹），使用如下格式：</p>
-
-<pre><code class="language-yaml">title: 文章标题
-date: 年-月-日 时:分:秒 #创建时间，可加时区如&quot; +0800&quot;
-update: 年-月-日 时:分:秒 #更新时间，可选，可加时区如&quot; +0800&quot;
-author: 作者ID
-cover: 题图链接 #可选
-draft: false #草稿，可选
-top: false #置顶文章，可选
-preview: 文章预览，也可在正文中使用&lt;!--more--&gt;分割 #可选
-tags: #可选
-    - 标签1
-    - 标签2
-type: post #指定类型为文章(post)或页面(page)，可选
-hide: false #隐藏文章，只可通过链接访问，可选
-
----
-
-Markdown格式的正文
-</code></pre>
-
-<h3>发布博客</h3>
-
-<ul>
-<li>在博客目录下运行<code>ink publish</code>命令自动构建博客并发布。</li>
-<li>或运行<code>ink build</code>命令将生成的<code>public</code>目录下的内容手动部署。</li>
-</ul>
-
-<blockquote>
-<p>Tips: 在使用<code>ink preview</code>命令时，编辑保存文件后，博客会自动重新构建并刷新浏览器页面。</p>
-</blockquote>
-
-<h2>定制支持</h2>
-
-<h3>修改主题</h3>
-
-<p>默认主题在<code>theme</code>目录下，修改源代码后在该目录下运行<code>npm install</code>与<code>npm run build</code>重新构建。</p>
-
-<p>页面包含<code>page.html</code>（文章列表）及<code>article.html</code>（文章）等，所有页面均支持<a href="http://golang.org/pkg/html/template/">GO语言HTML模板</a>语法，可引用变量。</p>
-
-<h3>添加页面</h3>
-
-<p>在<code>source</code>目录下创建的任意<code>.html</code>文件将被复制，这些文件中可引用<code>config.yml</code>中site字段下的所有变量。</p>
-
-<h3>博客迁移(Beta)</h3>
-
-<p>纸小墨提供简单的Jeklly/Hexo博客文章格式转换，使用命令：</p>
-
-<pre><code class="language-shell">ink convert /path/_posts
-</code></pre>
-
-<h3>源码编译</h3>
-
-<p>本地运行</p>
-
-<ol>
-<li>配置<a href="http://golang.org/doc/install">GO</a>语言环境。</li>
-<li>运行命令<code>go get github.com/InkProject/ink</code>，编译并获取ink。</li>
-<li>运行命令<code>ink preview $GOPATH/src/github.com/InkProject/ink/template</code>，预览博客。</li>
-</ol>
-
-<p>Docker构建（示例）</p>
-
-<ol>
-<li>Clone源码 <code>git clone git@github.com:InkProject/ink.git</code>。</li>
-<li>源码目录下构建镜像<code>docker build -t ink .</code>。</li>
-<li>运行容器<code>docker run -p 8000:80 ink</code>。</li>
-</ol>
-
-<h2>主题</h2>
-
-<ul>
-<li>Dark(Official Theme): <a href="https://github.com/InkProject/ink-theme-dark">https://github.com/InkProject/ink-theme-dark</a></li>
-<li>simple: <a href="https://github.com/myiq/ink-simple">https://github.com/myiq/ink-simple</a></li>
-</ul>
-
-<h2>相关链接</h2>
-
-<ul>
-<li><a href="https://segmentfault.com/a/1190000009084954">InkPaper 最佳实践</a></li>
-</ul>
-
-<h2>反馈贡献</h2>
-
-<p>纸小墨基于 <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC Attribution-NonCommercial License 4.0</a> 协议，目前为止它仍然是个非成熟的开源项目，非常欢迎任何人的任何贡献。如有问题可报告至 <a href="https://github.com/InkProject/ink/issues">https://github.com/InkProject/ink/issues</a>。</p>
-
-<h2>更新历史</h2>
-
-<ul>
-<li>[2016-07-11] 修复诸多Issue与合并一些PR。</li>
-<li>[2015-08-15] 一些Bug修复，新增RSS订阅支持，主题改善。</li>
-<li>[2015-07-04] 数项Bug修复与主题改善，支持置顶，多语言，子模板。</li>
-<li>[2015-06-04] 编译更多平台版本，增加标签与存档页。</li>
-<li>[2015-03-01] Beta版本，基础功能完成。</li>
-</ul>
-
-<h2>更新计划</h2>
-
-<ul>
-<li>排版深度优化</li>
-<li>纸小墨编辑器</li>
-</ul>
-
-<h2>正在使用</h2>
-
-<ul>
-<li><a href="http://www.chole.io/blog/">http://www.chole.io/blog/</a></li>
-<li><a href="http://blog.hyper.sh/">http://blog.hyper.sh/</a></li>
-<li><a href="http://wangxu.me/">http://wangxu.me/</a></li>
-<li><a href="http://whzecomjm.com/">http://whzecomjm.com/</a></li>
-<li><a href="http://www.shery.me/blog/">http://www.shery.me/blog/</a></li>
-</ul>
+<p>authors:</p>
 </article>
                 <section class="author">
                     <div class="avatar" style="background-image: url(/images/write.jpg);"></div>
@@ -262,13 +135,13 @@ Markdown格式的正文
                     
                     <section class="nav prev more">
                         <div class="head">上篇文章</div>
-                        <a class="link" href="/the_zen_of_python.html">The Zen of Python</a>
+                        <a class="link" href="/ink-blog-tool.html">简洁的静态博客构建工具 —— 纸小墨（InkPaper）</a>
                     </section>
                     
                     
                     <section class="nav next more">
                         <div class="head">下篇文章</div>
-                        <a class="link" href="/template.html">简洁的静态博客构建工具 —— 纸小墨（InkPaper）</a>
+                        <a class="link" href="/ink-blog-tool-en.html">An Elegant Static Blog Generator —— InkPaper</a>
                     </section>
                     
                 </section>

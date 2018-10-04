@@ -1,18 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>碎文仓</title>
   <id>https://yaoxiaochao.github.io</id>
-  <updated>2018-10-04T01:04:35+03:00</updated>
+  <updated>2018-10-04T09:31:47+03:00</updated>
   <subtitle>一点点的积累也许就消失在那一刻</subtitle>
   <link href="https://yaoxiaochao.github.io"></link>
   <author>
     <name>碎文仓</name>
   </author>
   <entry>
+    <title>The Zen of Python</title>
+    <updated>2018-10-04T09:00:00+03:00</updated>
+    <id>tag:yaoxiaochao.github.io,2018-10-04:/the_zen_of_python.html</id>
+    <content type="html">&lt;p&gt;《Python之禅》的翻译和解释&lt;/p&gt;&#xA;</content>
+    <link href="https://yaoxiaochao.github.io/the_zen_of_python.html"></link>
+    <author>
+      <name>Miba</name>
+    </author>
+  </entry>
+  <entry>
     <title>简洁的静态博客构建工具 —— 纸小墨（InkPaper）</title>
     <updated>2016-07-11T17:00:00+08:00</updated>
     <id>tag:yaoxiaochao.github.io,2016-07-11:/ink-blog-tool.html</id>
     <content type="html">&lt;p&gt;纸小墨（InkPaper）是一个GO语言编写的开源静态博客构建工具，可以快速搭建博客网站。它无依赖跨平台，配置简单构建快速，注重简洁易用与更优雅的排版。&lt;/p&gt;&#xA;</content>
     <link href="https://yaoxiaochao.github.io/ink-blog-tool.html"></link>
+    <author>
+      <name>Miba</name>
+    </author>
+  </entry>
+  <entry>
+    <title>简洁的静态博客构建工具 —— 纸小墨（InkPaper）</title>
+    <updated>2016-07-11T17:00:00+08:00</updated>
+    <id>tag:yaoxiaochao.github.io,2016-07-11:/template.html</id>
+    <content type="html">&lt;p&gt;纸小墨（InkPaper）是一个GO语言编写的开源静态博客构建工具，可以快速搭建博客网站。它无依赖跨平台，配置简单构建快速，注重简洁易用与更优雅的排版。&lt;/p&gt;&#xA;</content>
+    <link href="https://yaoxiaochao.github.io/template.html"></link>
     <author>
       <name>Miba</name>
     </author>
@@ -30,7 +50,7 @@
   <entry>
     <title>使用 Ubuntu 和 hexo 部署博客</title>
     <updated></updated>
-    <id>urn:uuid:bc2f0c8b-ea5a-4db5-b429-3c43f351af43</id>
+    <id>urn:uuid:1321be2a-fd07-44e2-a42b-b60d4d235cb4</id>
     <content type="html"></content>
     <link href="https://yaoxiaochao.github.io/使用ubuntu-hexo部署博客.html"></link>
     <author>

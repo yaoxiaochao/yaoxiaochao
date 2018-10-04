@@ -74,15 +74,14 @@
                     
                     <span class="tags"><a class="tag" href="/tag/Ubuntu/index.html">Ubuntu</a><a class="tag" href="/tag/hexo/index.html">hexo</a></span>
                 </section>
-                <article class="content"><h3>使用Ubuntu + hexo 部署博客</h3>
+                <article class="content"><h2>使用Ubuntu + hexo 部署博客</h2>
 
-<p>前言:
-   之前在windows 10 使用过git+hexo, 安装过程还算容易, 因为node.js 有exe 安装包, 而在Ubuntu平台上,
+<p>之前在windows 10 使用过git+hexo, 安装过程还算容易, 因为node.js 有exe 安装包, 而在Ubuntu平台上,
 需要利用nvm,npm包管理工具来安装, 因为没有在网上搜索到详细的解决方案, 所以主要在这里浪费了时间.</p>
 
-<p>####安装git, 对接github, 这里比较简单, 都可以百度.</p>
+<p>###安装git, 对接github, 这里比较简单, 都可以百度.</p>
 
-<p>####安装node.js, 大概有两种方法, 一种是通过软件仓库安装, 另一种是通过nvm安装, 我使用的是后一种, 这里重点分享一下:
+<p>安装node.js, 大概有两种方法, 一种是通过软件仓库安装, 另一种是通过nvm安装, 我使用的是后一种, 这里重点分享一下:
 运行命令如下:</p>
 
 <pre><code class="language-bash">    export NVM_DIR=&quot;$HOME/.nvm&quot; &amp;&amp; (
@@ -142,7 +141,7 @@ lts/boron -&gt; v6.11.0
 
 <p>如果有哪一项没有安装, 可以使用 nvm install 来安装</p>
 
-<p>####手动更新nvm</p>
+<p>手动更新nvm</p>
 
 <pre><code class="language-bash">    (cd &quot;$NVM_DIR&quot;
     git fetch origin
@@ -150,13 +149,13 @@ lts/boron -&gt; v6.11.0
     ) &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;
 </code></pre>
 
-<p>####安装hexo
+<p>安装hexo
 如果前面的步骤都正确没问题，那么现在可以通过 npm 安装 hexo 了：</p>
 
 <pre><code class="language-bash">npm install -g hexo-cli
 </code></pre>
 
-<p>####安装完成后，进行初始化操作</p>
+<p>安装完成后，进行初始化操作</p>
 
 <pre><code class="language-bash">mkdir blog
 hexo init blog      #初始化，创建一个你专门存放博客文件的文件夹，我这里把文件夹命名为 blog，你可以改成你想要的名字
@@ -166,17 +165,17 @@ npm install          #安装相关依赖
 
 <p>一些使用说明</p>
 
-<p>####hexo 更新</p>
+<p>hexo 更新</p>
 
 <pre><code class="language-bash">npm update -g
 </code></pre>
 
-<p>####安装插件</p>
+<p>安装插件</p>
 
 <pre><code class="language-bash">npm install &lt;plugin-name&gt; --save
 </code></pre>
 
-<p>####卸载插件</p>
+<p>卸载插件</p>
 
 <pre><code class="language-bash">npm uninstall &lt;plugin-name&gt;
 </code></pre>
